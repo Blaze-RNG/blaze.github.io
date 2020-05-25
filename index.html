@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<head>
+    <title>Blaze - Home</title>
+    <link rel="icon" href="tab.png">
+    <style>
+        .dropbtn {
+  background-color: #4CAF50;
+  margin-top:25px;
+  border-radius: 30px;
+  color: white;
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  float: right;
+  margin-left: -80px;
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+    border-radius: 20px;
+    opacity: .8;
+  float: left;
+  margin-left: -80px;
+  display: none;
+  position: absolute;
+  
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {background-color: #ddd; border-radius: 20px;}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn {background-color: white; color: #4CAF50; border: 2px solid #4CAF50;}
+
+
+    </style>
+</head>
+<body style="background-color: black;">
+    <script language="JavaScript">
+        window.onload = function () {
+            document.addEventListener("contextmenu", function (e) {
+                e.preventDefault();
+            }, false);
+            document.addEventListener("keydown", function (e) {
+                //document.onkeydown = function(e) {
+                // "I" key
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+                    disabledEvent(e);
+                }
+                // "J" key
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+                    disabledEvent(e);
+                }
+                // "S" key + macOS
+                if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+                    disabledEvent(e);
+                }
+                // "U" key
+                if (e.ctrlKey && e.keyCode == 85) {
+                    disabledEvent(e);
+                }
+                // "F12" key
+                if (event.keyCode == 123) {
+                    disabledEvent(e);
+                }
+            }, false);
+            function disabledEvent(e) {
+                if (e.stopPropagation) {
+                    e.stopPropagation();
+                } else if (window.event) {
+                    window.event.cancelBubble = true;
+                }
+                e.preventDefault();
+                return false;
+            }
+        }
+</script>
+    <audio autoplay="true" src="bkg.mp3" style="display:none;" type="audio/mp3"></audio>
+<img src="background.webp" style=" background-image: url(background.webp); background-repeat: no-repeat; position: absolute;top: 50%;left: 50%;width: 500px;height: 500px;margin-top: -250px; margin-left: -250px"></img>
+<img src="logo.jpg" alt="logo" style="float:left;opacity: 1; text-align: center; width: 200px; height:100px; background: #555;"/>
+<h1 style="text-align: center; color: whitesmoke; position: fixed;top: 50%;left: 50%;width: 500px;height: 500px;margin-top: -40px; margin-left: -250px">Quantum Chaotic Random Number Generator</h1>
+<h1 style="text-align: center; color: gray; position: fixed;top: 90%;left: 50%;width: 500px;height: 500px;margin-top: -0px; margin-left: -250px">Coming Soon</h1>
+<div class="dropdown">
+    <button class="dropbtn">More<i class="fa fa-navicon" style="color: white;"></i></button>
+    <div class="dropdown-content">
+      <a href="https://filebin.net/fizwl42zkahqwod3/blaze_rng.pdf?t=811gh86m">NIST Test Result</a>
+      <a href="https://filebin.net/fizwl42zkahqwod3/blazeRNG_Sample.bin?t=811gh86m">Sample Binary File</a>
+    </div>
+  </div>
+  
+</body>
